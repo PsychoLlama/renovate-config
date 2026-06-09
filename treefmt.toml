@@ -1,0 +1,15 @@
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+includes = [
+  "*.json",
+  "*.json5",
+  "*.jsonc",
+  "*.md",
+  "*.yaml",
+  "*.yml",
+]
+
+[formatter.nix]
+command = "nixfmt"
+includes = ["*.nix"]
