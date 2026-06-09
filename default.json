@@ -1,16 +1,34 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":disableDependencyDashboard"],
+  "extends": [
+    "config:recommended",
+
+    // IMO it's more annoying than helpful.
+    ":disableDependencyDashboard"
+  ],
+
+  // Don't use GitHub's auto-merge feature. Have Renovate do the merge.
+  // GH requires per-repo setup for it to work and that's lame.
   "platformAutomerge": false,
+
+  // Juuuust enough time to avoid supply chain attacks. Maybe.
   "minimumReleaseAge": "3 days",
+
   "nix": {
     "enabled": true,
+
+    // `nixpkgs` has no semver range. Bump the lockfile instead.
     "lockFileMaintenance": {
       "enabled": true,
       "schedule": ["on the first day of the month"],
+
+      // Hydra build times are an implicit minimum age.
       "minimumReleaseAge": null
     }
   },
+
+  // Dev deps are a safe-ish category covered by repo tests.
+  // Prod deps might have trickier behaviors and deserve a human pressing "merge".
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
