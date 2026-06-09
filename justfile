@@ -8,3 +8,7 @@ fmt:
 # Check formatting.
 fmt-check:
     treefmt --ci
+
+# Validate the Renovate config.
+renovate-check:
+    renovate-config-validator config.json5

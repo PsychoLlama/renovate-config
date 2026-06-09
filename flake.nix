@@ -34,6 +34,7 @@
               pkgs.just
               pkgs.nixfmt
               pkgs.prettier
+              pkgs.renovate
               pkgs.treefmt
             ];
           };
