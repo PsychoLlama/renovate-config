@@ -10,6 +10,6 @@ Many of my projects use [Mend Renovate](https://docs.mend.io/renovate/latest). I
 ```json5
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["github>PsychoLlama/renovate-config#main:config.json5"],
+  extends: ["github>PsychoLlama/renovate-config"],
 }
 ```

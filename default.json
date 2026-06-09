@@ -1,0 +1,26 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":disableDependencyDashboard"],
+  "platformAutomerge": false,
+  "minimumReleaseAge": "3 days",
+  "nix": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions", "nix"],
+      "automerge": true
+    },
+    {
+      // The flake owns the pnpm version (managePackageManagerVersions is off);
+      // the packageManager field is only a turbo lockfile-parser hint, kept in
+      // sync by hand. Skip its bump PRs.
+      "matchDepTypes": ["packageManager"],
+      "enabled": false
+    }
+  ]
+}

@@ -11,4 +11,4 @@ fmt-check:
 
 # Validate the Renovate config.
 renovate-check:
-    renovate-config-validator config.json5
+    renovate-config-validator --no-global default.json
