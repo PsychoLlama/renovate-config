@@ -4,12 +4,12 @@ Many of my projects use [Mend Renovate](https://docs.mend.io/renovate/latest). I
 
 ## Usage
 
-> [!WARN]
-> Writing this for my own reference. Other folks shouldn't depend on this repo.
+> [!WARNING]
+> It's just for my own reference. Not intended for public consumption. May contain carcinogens.
 
-```json5
+```jsonc
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["github>PsychoLlama/renovate-config"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>PsychoLlama/renovate-config"],
 }
 ```
