@@ -8,6 +8,7 @@ Many of my projects use [Mend Renovate](https://docs.mend.io/renovate/latest). I
 > It's just for my own reference. Not intended for public consumption. May contain carcinogens.
 
 ```jsonc
+// .github/renovate.json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>PsychoLlama/renovate-config"],
