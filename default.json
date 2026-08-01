@@ -20,7 +20,15 @@
     // `nixpkgs` has no semver range. Bump the lockfile instead.
     "lockFileMaintenance": {
       "enabled": true,
+
+      // Without an explicit release age Renovate happily creates several
+      // PRs over a over a single day. It creates a lot of noise.
+      //
+      // Merging on a schedule means exactly one PR. Note that Renovate
+      // may rebase it with changes over the course of the first day.
       "schedule": ["on the first day of the month"],
+      "automergeSchedule": ["on the 2nd day of the month"],
+      "platformAutomerge": false,
 
       // Hydra build times are an implicit minimum age.
       "minimumReleaseAge": null
